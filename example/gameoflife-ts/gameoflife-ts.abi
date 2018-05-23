@@ -1,0 +1,63 @@
+{
+  "structs": [{
+      "name": "remove",
+      "base": "",
+      "fields": [
+        {"name":"user", "type":"name"},
+        {"name":"game", "type":"name"}
+      ]
+    },{
+      "name": "removeall",
+      "base": "",
+      "fields": [
+        {"name":"user", "type":"name"}
+      ]
+    },{
+      "name": "create",
+      "base": "",
+      "fields": [
+        {"name":"user", "type":"name"},
+        {"name":"game", "type":"name"},
+        {"name":"num_rows", "type":"uint32"},
+        {"name":"num_cols", "type":"uint32"},
+        {"name":"seed", "type":"uint32"}
+      ]
+    },{
+      "name": "step",
+      "base": "",
+      "fields": [
+        {"name":"user", "type":"name"},
+        {"name":"game", "type":"name"}
+      ]
+    },{
+      "name": "board",
+      "base": "",
+      "fields": [
+        {"name":"game", "type":"name"},
+        {"name":"rows", "type":"string[]"}
+      ]
+    }
+  ],
+  "actions": [{
+      "name": "create",
+      "type": "create"
+    },{
+      "name": "remove",
+      "type": "remove"
+    },{
+      "name": "removeall",
+      "type": "removeall"
+    },{
+      "name": "step",
+      "type": "step"
+    }
+  ],
+  "tables": [{
+      "name": "boards",
+      "type": "board",
+      "index_type": "i64",
+      "key_names" : ["game"],
+      "key_types" : ["name"]
+    }
+  ]
+}
